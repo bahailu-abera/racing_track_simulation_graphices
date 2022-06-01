@@ -17,6 +17,7 @@ class Input(object):
             if event.type == pg.QUIT:
                 self.quit = True
 
+
 class Base(object):
     def __init__(self, screenSize=[512, 512]):
 
@@ -24,7 +25,7 @@ class Base(object):
         pg.init()
 
         #width and height
-        screenSize = (512, 512)
+        screenSize = (900, 900)
 
         # indicate rendering details
         displayFlags = pg.DOUBLEBUF | pg.OPENGL
@@ -33,7 +34,7 @@ class Base(object):
         self.screen = pg.display.set_mode(screenSize, displayFlags)
 
         # set the title bar of the window
-        pg.display.set_caption("Graphics Window")
+        pg.display.set_caption("Racing Track simulation")
 
         # determine if main loop is active
         self.running = True
@@ -44,12 +45,12 @@ class Base(object):
         # manage user input
         self.input = Input()
 
-
     # implemented by extending class
+
     def initialize(self):
         pass
 
-    #implemented by the extending class
+    # implemented by the extending class
     def update(self):
         pass
 
@@ -69,7 +70,7 @@ class Base(object):
 
             ## render ##
 
-            ## display image on screen
+            # display image on screen
             pg.display.flip()
 
             # pause if necessary to achieve 60 FPS
@@ -77,6 +78,7 @@ class Base(object):
         ## shutdown ##
         pg.quit()
         sys.exit()
+
 
 if __name__ == "__main__":
     Base().run()
