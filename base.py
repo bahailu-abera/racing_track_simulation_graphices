@@ -1,4 +1,5 @@
 import pygame as pg
+import numpy as np
 import sys
 
 
@@ -53,6 +54,16 @@ class Base(object):
     # implemented by the extending class
     def update(self):
         pass
+
+    def rotationMatrix(self, degree):
+        radian = degree * np.pi / 180.0
+
+        mat = np.array([
+            [np.cos(radian), -np.sin(radian)],
+            [np.sin(radian), np.cos(radian)],
+        ])
+
+        return mat
 
     def run(self):
         ## startup ##
