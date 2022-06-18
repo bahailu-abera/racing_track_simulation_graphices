@@ -78,7 +78,20 @@ while True:
             # car_y_pos -= 0.3
         elif car_x_rotation >= 350:
             car_x_rotation = 0
-
+    if keys[pygame.K_DOWN]:
+        # if car_z_pos >= -4 or (car_z_pos < -4 and car_x_pos < -20):
+        if car_x_rotation <= 50.0 and car_x_position >= -27 and car_x_position < 7:
+            car_x_position += 1
+        elif car_x_rotation >= 45.0 and car_x_rotation <= 145 and car_z_position >= -22 and car_z_position <= -4:
+            car_z_position += 1
+            # car_y_pos += 0.3
+        elif car_x_rotation > 145 and car_x_rotation <= 245 and car_x_position <= 12 and car_x_position >= -32:
+            car_x_position -= 1
+        elif car_x_rotation >= 245 and car_x_rotation <= 350 and car_z_position <= -3 and car_z_position >= -24:
+            car_z_position -= 1
+            # car_y_pos -= 0.3
+        elif car_x_rotation >= 350:
+            car_x_rotation = 0
     if keys[pygame.K_RIGHT]:
         car_x_rotation += 5
     if keys[pygame.K_LEFT]:
